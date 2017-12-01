@@ -21,25 +21,17 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $obj = json_decode(curl_exec($ch),true);
 //print_r ($obj);
-echo "RESULT COMING IN" ;
+echo "<table border = 1><tr><td>Bid</td><td>Ask</td><td>Last</td><tr><td>";
 echo $obj["result"]["Bid"];
+echo "</td><td>";
 echo $obj["result"]["Ask"];
+echo "</td><td>";
 echo $obj["result"]["Last"];
+echo "</td></tr></table>";
+
+
 ?>
 </body>
 </html>
 
 
-<table border = 1>
-<tr><td>Bid</td><td>Ask</td><td>Last</td>
-<tr><td>
-<? php
-echo $obj["result"]["Bid"];
-?></td><td>
-<? php
-echo $obj["result"]["Ask"];
-?></td><td>
-<? php
-echo $obj["result"]["Last"];
-?></td>
-</tr></table>
