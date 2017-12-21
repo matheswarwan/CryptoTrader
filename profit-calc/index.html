@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>HTML Template</title>
+	<script>
+	function percentageCalc() {
+	  var ent = parseInt(document.getElementById("entry").value,10);
+	  var ex  = parseInt(document.getElementById("exit").value,10);
+	  var prof = ((+ex - +ent)/+ent)*100;
+	  var com  = (((ex - ent) - ((ex + ent) * 0.0025) )/ent)*100
+	  var msg  = "Profit % is " + prof.toFixed(2) + "%. With commision, it is " + com.toFixed(2) + "%.";
+
+	  document.getElementById("profPercentage").innerHTML = msg;
+	}
+	</script>
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+
+	<!-- Magnific Popup -->
+	<link type="text/css" rel="stylesheet" href="css/magnific-popup.css" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div id="profitCalc" class="section md-padding">
+		<div class="container">
+			<div class="row">
+				<div class="section-header text-center">
+					<h2 class="title">Profit Percentage</h2>
+				</div>
+				<div class="col-md-8 col-md-offset-2">
+					<form class="contact-form">
+						<input type="text" class="input" placeholder="Entry" id='entry'>
+						<input type="text" class="input" placeholder="Exit" id='exit'>
+						<button class="main-btn" onclick="percentageCalc()">Calculate</button>
+					</form>
+				</div>
+				<div class="col-md-8 col-md-offset-2" id="profPercentage">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
