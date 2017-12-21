@@ -10,13 +10,13 @@
 	<title>HTML Template</title>
 	<script>
 	function percentageCalc() {
-	  var ent = parseInt(document.getElementById("entry").value,10);
-	  var ex  = parseInt(document.getElementById("exit").value,10);
-	  var prof = ((+ex - +ent)/+ent)*100;
-	  var com  = (((ex - ent) - ((ex + ent) * 0.0025) )/ent)*100
-	  var msg  = "Profit % is " + prof.toFixed(2) + "%. With commision, it is " + com.toFixed(2) + "%.";
+		var ent = parseInt(document.getElementById("entry").value,10);
+		var ex  = parseInt(document.getElementById("exit").value,10);
+		var prof = ((+ex - +ent)/+ent)*100;
+		var com  = (((ex - ent) - ((ex + ent) * 0.0025) )/ent)*100
+		var msg  = "Profit is <b>" + prof.toFixed(2) + "%</b>. With commision, it is <b>" + com.toFixed(2) + "%</b>.";
 
-	  document.getElementById("profPercentage").innerHTML = msg;
+		document.getElementById("profPercentage").innerHTML = msg;
 	}
 	</script>
 	<!-- Google font -->
@@ -48,11 +48,13 @@
 					<h2 class="title">Profit Percentage</h2>
 				</div>
 				<div class="col-md-8 col-md-offset-2">
-					<form class="contact-form">
+					<div class="contact-form">
+					<!--<form class="contact-form">-->
 						<input type="text" class="input" placeholder="Entry" id='entry'>
 						<input type="text" class="input" placeholder="Exit" id='exit'>
 						<button class="main-btn" onclick="percentageCalc()">Calculate</button>
-					</form>
+					<!--</form>-->
+					</div>
 				</div>
 				<div class="col-md-8 col-md-offset-2" id="profPercentage">
 				</div>
